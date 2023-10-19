@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Yummy</title>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="awesome/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="imgs/logo (3).png" size="32x32">
+
+  
+  <meta charset="UTF-8" />
+  <meta name="keywords" content="HTML, CSS, javascript" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+ 
+</head>
+
+<body>
+  <div id="loading" class="vh-100">
+    <div class="lds-roller">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <header id="header">
+    <div class="header-icons">
+      <div class="logo py-4">
+        <img src="imgs/logo (3).png" />
+      </div>
+      <div class="open-menu pointer">
+        <i class="fa-solid fa-align-justify fs-4 close"></i>
+      </div>
+      <div class="share-icons">
+        <div class="lang">
+          <i class="fa-solid fa-globe pointer"></i>
+        </div>
+        <div class="share">
+          <i class="fa-solid fa-share-nodes pointer"></i>
+        </div>
+      </div>
+    </div>
+    <div class="header-body">
+      <div class="nav-data">
+        <div class="nav-items">
+          <ul class="text-white nav-ul">
+            <li class="item" id="search">
+              <a>Search</a>
+            </li>
+            <li class="item" id="categories">
+              <a>Categories</a>
+            </li>
+            <li class="item" id="area">
+              <a>Area</a>
+            </li>
+            <li class="item" id="ingredients">
+              <a>Ingredients</a>
+            </li>
+            <li class="item" id="contact">
+              <a>Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="social-icons mt-5 pt-5">
+        <a><i class="fa-brands fa-facebook text-white pe-3"></i></a>
+        <a><i class="fa-brands fa-twitter text-white pe-3"></i></a>
+        <a><i class="fa-solid fa-globe text-white"></i></a>
+        <div class="nav-footer pt-3">
+          <p class="fs-6">Copyright Â© 2019 All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="py-5 main">
+    <div class="container w-75 text-center my-1 py-2 mt-5 sections">
+      <div class="row-meals row mt-3 p-2">
+
+      </div>
+      <div class="meal-details row mt-3 p-2 d-none">
+        <div class="col-md-4 text-white">
+          <img class="w-100 meal-img" />
+          <h1 class="fw-light meal-names"></h1>
+        </div>
+        <div class="col-md-8 text-white text-start">
+          <h2 class="fw-light">Instructions</h2>
+          <p class="inst"></p>
+          <p>Area : <span class="area"></span></p>
+          <p>Category : <span class="category"></span></p>
+          <h3>Recipes :</h3>
+          <ul class="recipe d-flex ps-0"></ul>
+        
+          <a class="btn btn-success text-white source" target="_blank">Source</a>
+          <a class="btn youtube btn-danger text-white" target="_blank">Youtub</a>
+        </div>
+      </div>
+      <div class="row-categories row mt-3 p-2 d-none">
+
+      </div>
+      <div class="category-details row mt-3 p-2 d-none">
+
+      </div>
+      <div class="lookup-meal row mt-3 p-2 d-none">
+        <div class="col-md-4 text-white">
+          <img class="w-100 meal-img" />
+          <h1 class="fw-light meal-names"></h1>
+        </div>
+        <div class="col-md-8 text-white text-start">
+          <h2 class="fw-light">Instructions</h2>
+          <p class="inst"></p>
+          <p>Area : <span class="area"></span></p>
+          <p>Category : <span class="category"></span></p>
+          <h3>Recipes :</h3>
+          <ul class="d-flex ps-0" id="recipes"></ul>
+          <h3 class="my-2 mx-1 p-1">Tags :</h3>
+          <ul class="d-flex ps-0" id="tags"></ul>
+          <a class="btn btn-success text-white source" target="_blank">Source</a>
+          <a class="btn youtube btn-danger text-white" target="_blank">Youtub</a>
+        </div>
+      </div>
+      <div class="row-area row mt-3 p-2 d-none">
+
+      </div>
+      <div class="area-details row mt-3 p-2 d-none">
+
+      </div>
+      <div class="row-ingrediants row mt-3 p-2 d-none">
+
+
+
+      </div>
+      <div class="ingrediants-details row mt-3 p-2 d-none">
+
+      </div>
+    </div>
+    <div class="container search w-75 d-none">
+      <div class="row">
+        <div class="col-md-6">
+          <input id="searchName" class="form-control mb-2 bg-transparent border-none border-bottom text-center"
+            placeholder="Search By Name">
+
+        </div>
+        <div class="col-md-6">
+          <input type="text" maxlength="1" id="searchLetter"
+            class="form-control mb-2 bg-transparent border-none border-bottom text-center"
+            placeholder="Search By First Letter">
+
+        </div>
+      </div>
+      <div class="row search-meals t-3 p-2">
+
+      </div>
+    </div>
+    <div class="container contact w-75 text-center my-1 py-2 mt-5 d-none">
+      <div class="row mt-3 p-2">
+        <div class="container w-75 mx-auto mb-5 p-2 text-white ">
+          <h2 class="fw-lighter">Contact Us</h2>
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+              <div class="form-group mt-4">
+                <input type="text" class="form-control shadow-lg bg-black border-none border-bottom" id="nameInput"
+                  placeholder="Enter Your Name">
+                <div class="mt-1 name-error error py-2 px-5 fs-6 fw-lighter d-none rounded">
+                  Special Characters and Numbers not allowed
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group mt-4">
+                <input type="email" class="form-control shadow-lg bg-black border-none border-bottom" id="email"
+                  placeholder="Enter Your Email">
+                <div class="mt-1 error email-error py-2 px-5 fs-6 fw-lighter d-none rounded">
+
+                  Enter valid email. *Ex: xxx@yyy.zzz
+
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group mt-4">
+                <input class="form-control shadow-lg bg-black border-none border-bottom" id="phone"
+                  placeholder="Enter Phone">
+                <div class="mt-1 error phone-error py-2 px-5 fs-6 fw-lighter d-none">
+                  Enter valid Phone Number</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group mt-4">
+                <input type="number" class="form-control shadow-lg bg-black border-none border-bottom" id="age"
+                  placeholder="Enter Your Age">
+                <div class="mt-1 error age-error py-2 px-5 fs-6 fw-lighter d-none">
+                  Enter valid Age
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group mt-4">
+                <input type="password" class="form-control shadow-lg bg-black border-none border-bottom" id="password"
+                  placeholder="Enter Password">
+                <div class="mt-1 error password-error py-2 px-5 fs-6 fw-lighter d-none">
+                  Enter valid password *Minimum eight characters, at least one letter and one number:*
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group mt-4">
+                <input type="password" class="form-control shadow-lg bg-black border-none border-bottom"
+                  id="passwordCheck" placeholder="Enter Password">
+                <div class="mt-1 error passwordCheck-error py-2 px-5 fs-6 fw-lighter d-none">
+                  Enter valid password
+                </div>
+              </div>
+            </div>
+            <button type="submit" disabled="true" id="submit" class="btn btn-outline-danger w-auto mt-3">Submit</button>
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </section>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/jquery-3.6.1.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
